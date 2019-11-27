@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Alert, Button } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#2F303F',
-    alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 120,
   },
   buttons: {
-      display: 'flex',
+      flex: 1,
       flexDirection: 'row',
-      fontSize: 24,
+      justifyContent: 'space-evenly',
   },
-//   form: {
-//       colo
-//   }
+  button: {
+      fontSize: 24,
+      color: '#ffffff'
+  }
 });
 
 export default class LoginScreen extends Component {
@@ -27,15 +28,22 @@ export default class LoginScreen extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.buttons}>
-                    <Button title="Log in"
-                            disabled
-                            onPress={() => Alert.alert('Cannot press this one')}
-                            color="#FFFFF"
-                    />
-                    <Button title="Sign up"
-                            onPress={() => Alert.alert('Press this one')}
-                            color="#6C6D77"
-                    />
+                    <TouchableWithoutFeedback
+                    onPress={() => Alert.alert('Cannot press this one')}
+                    >
+                        <Text style={{
+                                fontSize: 24,
+                                color: '#ffffff'
+                            }}>Log in</Text>
+                    </TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback
+                    onPress={() => Alert.alert('Press this one')}
+                    >
+                        <Text style={{
+                                fontSize: 24,
+                                color: '#6C6D77'
+                            }}>Sign up</Text>
+                    </TouchableWithoutFeedback>
                 </View>
                 {/* <View style={styles.form}>
 
