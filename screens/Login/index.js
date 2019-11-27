@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableWithoutFeedback, Alert, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Alert, TextInput } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#2F303F',
+    // alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 120,
+    paddingBottom: 120,
   },
   buttons: {
       flex: 1,
@@ -16,6 +18,25 @@ const styles = StyleSheet.create({
   button: {
       fontSize: 24,
       color: '#ffffff'
+  },
+  form: {
+      backgroundColor: '#393A48',
+      flex: 1,
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: 20,
+      borderRadius: 25,
+  },
+  input: {
+    height: 60, 
+    backgroundColor: 'white',
+    borderWidth: 1,
+    width: '80%',
+    borderRadius: 50,
+    margin: 20,
+    paddingLeft: 20,
+    paddingRight: 20
   }
 });
 
@@ -24,7 +45,24 @@ export default class LoginScreen extends Component {
         header: null
     }
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            username: 'Username',
+            password: 'Password'
+        }
+    }
+
+    onChangeUsername(text) {
+        this.setState({ username: text })
+    }
+
+    onChangePassword(text) {
+        this.setState({ password: text })
+    }
+
     render() {
+        // const [value, onChangeText] = React.useState('Useless Placeholder');
         return (
             <View style={styles.container}>
                 <View style={styles.buttons}>
@@ -45,9 +83,18 @@ export default class LoginScreen extends Component {
                             }}>Sign up</Text>
                     </TouchableWithoutFeedback>
                 </View>
-                {/* <View style={styles.form}>
-
-                </View> */}
+                <View style={styles.form}>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={text => this.onChangeUsername(text)}
+                        value={this.state.username}
+                    />
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={text => this.onChangePassword(text)}
+                        value={this.state.password}
+                    />
+                </View>
                 <Text>Open up App.js to start working on your app!</Text>
             </View>
           );
