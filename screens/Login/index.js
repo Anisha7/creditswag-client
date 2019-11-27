@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableWithoutFeedback, Alert, TextInput, TouchableHighlight } from 'react-native';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 const styles = StyleSheet.create({
   container: {
@@ -39,10 +41,10 @@ const styles = StyleSheet.create({
     paddingRight: 20
   },
   submitButton: {
-      marginTop: 40,
+      marginTop: 20,
       borderRadius: 100,
       backgroundColor: '#AC5FCC',
-      padding: 10,
+      padding: 20,
   }
 });
 
@@ -100,8 +102,7 @@ export default class LoginScreen extends Component {
                         value={this.state.password}
                     />
                     <TouchableHighlight style={styles.submitButton} onPress={alert('Button pressed')}>
-                            {/* TODO: replace with icon */}
-                            <Text>-></Text>
+                            <FontAwesomeIcon icon={ faArrowRight } size={ 32 } style={{ color: 'white' }}/>
                     </TouchableHighlight>
                 </View>
                 <Text>Open up App.js to start working on your app!</Text>
