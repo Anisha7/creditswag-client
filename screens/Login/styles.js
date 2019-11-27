@@ -21,10 +21,11 @@ const styles = StyleSheet.create({
     form: {
       backgroundColor: "#393A48",
       margin: 20,
+    //   marginTop: 40,
       borderRadius: 25,
-      paddingTop: 40,
+      paddingTop: 20,
       paddingBottom: 40,
-      flex: 1,
+      flex: 2,
       flexDirection: "column",
       alignItems: "center"
     },
@@ -48,13 +49,14 @@ const styles = StyleSheet.create({
       flex: 1,
       flexDirection: "column",
       alignItems: "center",
-      marginTop: 150,
+      marginTop: 20,
     },
     otherOptions: {
       flex: 1,
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-evenly",
+      marginTop: 50,
     },
   });
   

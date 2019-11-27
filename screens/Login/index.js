@@ -7,11 +7,10 @@ import {
   TextInput,
   TouchableHighlight
 } from "react-native";
-import styles from './styles'
+import styles from "./styles";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-
 
 export default class LoginScreen extends Component {
   static navigationOptions = {
@@ -67,7 +66,6 @@ export default class LoginScreen extends Component {
 
         {/* Form for login */}
         <View style={styles.form}>
-
           <TextInput
             style={styles.input}
             onChangeText={text => this.onChangeUsername(text)}
@@ -79,9 +77,13 @@ export default class LoginScreen extends Component {
             value={this.state.password}
           />
 
+          <TouchableHighlight onPress={() => alert("forget password")}>
+            <Text>Forgot Password?</Text>
+          </TouchableHighlight>
+
           <TouchableHighlight
             style={styles.submitButton}
-            onPress={()=>alert("Button pressed")}
+            onPress={() => alert("Button pressed")}
           >
             <FontAwesomeIcon
               icon={faArrowRight}
@@ -93,27 +95,23 @@ export default class LoginScreen extends Component {
 
         {/* Other sign in options */}
         <View style={styles.otherOptionsContainer}>
-            <Text>Or Sign in with</Text>
-            <View style={styles.otherOptions}>
-            <TouchableHighlight
-                onPress={()=>alert("facebook")}
-            >
-                <FontAwesomeIcon
+          <Text>Or Sign in with</Text>
+          <View style={styles.otherOptions}>
+            <TouchableHighlight onPress={() => alert("facebook")}>
+              <FontAwesomeIcon
                 icon={faFacebook}
                 size={32}
                 style={{ color: "white" }}
-                />
+              />
             </TouchableHighlight>
-            <TouchableHighlight
-                onPress={()=>alert("google")}
-            >
-                <FontAwesomeIcon
+            <TouchableHighlight onPress={() => alert("google")}>
+              <FontAwesomeIcon
                 icon={faGoogle}
                 size={32}
                 style={{ color: "white" }}
-                />
+              />
             </TouchableHighlight>
-            </View>
+          </View>
         </View>
       </View>
     );
