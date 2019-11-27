@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import styles from "./styles";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 export default class LoginScreen extends Component {
@@ -78,7 +78,7 @@ export default class LoginScreen extends Component {
           />
 
           <TouchableHighlight onPress={() => alert("forget password")}>
-            <Text>Forgot Password?</Text>
+            <Text style={{ color: "#6C6D77" }}>Forgot Password?</Text>
           </TouchableHighlight>
 
           <TouchableHighlight
@@ -95,20 +95,20 @@ export default class LoginScreen extends Component {
 
         {/* Other sign in options */}
         <View style={styles.otherOptionsContainer}>
-          <Text>Or Sign in with</Text>
+          <Text style={{ textAlign: "center", color: "#6C6D77" }}>Or Sign in with</Text>
           <View style={styles.otherOptions}>
-            <TouchableHighlight onPress={() => alert("facebook")}>
+            <TouchableHighlight style={ styles.otherOptionsButton } onPress={() => alert("facebook")}>
               <FontAwesomeIcon
                 icon={faFacebook}
                 size={32}
-                style={{ color: "white" }}
+                style={{ color: "#3B5898" , borderRadius: 0 }}
               />
             </TouchableHighlight>
-            <TouchableHighlight onPress={() => alert("google")}>
+            <TouchableHighlight style={ styles.otherOptionsButton } onPress={() => alert("google")}>
               <FontAwesomeIcon
-                icon={faGoogle}
+                icon={faGooglePlus}
                 size={32}
-                style={{ color: "white" }}
+                style={{ color: "#F34A39", borderRadius: 0 }}
               />
             </TouchableHighlight>
           </View>

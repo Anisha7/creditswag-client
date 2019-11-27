@@ -48,16 +48,29 @@ const styles = StyleSheet.create({
     otherOptionsContainer: {
       flex: 1,
       flexDirection: "column",
-      alignItems: "center",
-      marginTop: 20,
+    //   alignItems: "center",
+      justifyContent: "center",
+      marginTop: 40,
     },
     otherOptions: {
       flex: 1,
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-evenly",
-      marginTop: 50,
+      marginTop: 30,
+      marginLeft: 20,
+      marginRight: 20,
     },
+    otherOptionsButton: {
+        backgroundColor: "white",
+        marginLeft: 5,
+        marginRight: 5,
+        width: 60,
+        padding: 10,
+        borderRadius: 50,
+        flex: 1,
+        alignItems: "center"
+    }
   });
   
 export default styles;
