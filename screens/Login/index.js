@@ -33,13 +33,33 @@ export default class LoginScreen extends Component {
     this.setState({ password: text });
   }
 
+  loginWithFacebook() {
+    Alert.alert('login with facebook clicked!')
+  }
+
+  loginWithGoogle() {
+    Alert.alert('login with google clicked!')
+  }
+
+  resetPassword() {
+    Alert.alert('forgot password clicked!')
+  }
+
+  login() {
+    Alert.alert("Button pressed")
+  }
+
+  redirectToSignup() {
+    Alert.alert("Press this one")
+  }
+
   render() {
     return (
       <View style={styles.container}>
         {/* Select Log in or Sign up */}
         <View style={styles.buttons}>
           <TouchableWithoutFeedback
-            onPress={() => Alert.alert("Cannot press this one")}
+            disabled
           >
             <Text
               style={{
@@ -51,7 +71,7 @@ export default class LoginScreen extends Component {
             </Text>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback
-            onPress={() => Alert.alert("Press this one")}
+            onPress={() => this.redirectToSignup() }
           >
             <Text
               style={{
@@ -77,13 +97,13 @@ export default class LoginScreen extends Component {
             value={this.state.password}
           />
 
-          <TouchableHighlight onPress={() => alert("forget password")}>
+          <TouchableHighlight onPress={() => this.resetPassword()}>
             <Text style={{ color: "#6C6D77" }}>Forgot Password?</Text>
           </TouchableHighlight>
 
           <TouchableHighlight
             style={styles.submitButton}
-            onPress={() => alert("Button pressed")}
+            onPress={() => this.login()}
           >
             <FontAwesomeIcon
               icon={faArrowRight}
@@ -97,14 +117,14 @@ export default class LoginScreen extends Component {
         <View style={styles.otherOptionsContainer}>
           <Text style={{ textAlign: "center", color: "#6C6D77" }}>Or Sign in with</Text>
           <View style={styles.otherOptions}>
-            <TouchableHighlight style={ styles.otherOptionsButton } onPress={() => alert("facebook")}>
+            <TouchableHighlight style={ styles.otherOptionsButton } onPress={() => this.loginWithFacebook()}>
               <FontAwesomeIcon
                 icon={faFacebook}
                 size={32}
                 style={{ color: "#3B5898" , borderRadius: 0 }}
               />
             </TouchableHighlight>
-            <TouchableHighlight style={ styles.otherOptionsButton } onPress={() => alert("google")}>
+            <TouchableHighlight style={ styles.otherOptionsButton } onPress={() => this.loginWithGoogle()}>
               <FontAwesomeIcon
                 icon={faGooglePlus}
                 size={32}

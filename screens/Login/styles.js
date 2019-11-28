@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
     form: {
       backgroundColor: "#393A48",
       margin: 20,
-    //   marginTop: 40,
       borderRadius: 25,
       paddingTop: 20,
       paddingBottom: 40,
@@ -48,7 +47,6 @@ const styles = StyleSheet.create({
     otherOptionsContainer: {
       flex: 1,
       flexDirection: "column",
-    //   alignItems: "center",
       justifyContent: "center",
       marginTop: 40,
     },
