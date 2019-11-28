@@ -12,7 +12,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
-export default class LoginScreen extends Component {
+export default class SignupScreen extends Component {
   static navigationOptions = {
     header: null
   };
@@ -21,7 +21,9 @@ export default class LoginScreen extends Component {
     super(props);
     this.state = {
       username: "Username",
-      password: "Password"
+      password: "Password",
+      email: "Email",
+      name: "Name",
     };
   }
 
@@ -31,6 +33,14 @@ export default class LoginScreen extends Component {
 
   onChangePassword(text) {
     this.setState({ password: text });
+  }
+
+  onChangeEmail(text) {
+    this.setState({ email: text });
+  }
+
+  onChangeName(text) {
+    this.setState({ name: text });
   }
 
   loginWithFacebook() {
@@ -49,9 +59,9 @@ export default class LoginScreen extends Component {
     Alert.alert("Button pressed")
   }
 
-  redirectToSignup() {
+  redirectToLogin() {
     const {navigate} = this.props.navigation;
-    navigate('Signup')
+    navigate('Login')
   }
 
   render() {
@@ -60,24 +70,24 @@ export default class LoginScreen extends Component {
         {/* Select Log in or Sign up */}
         <View style={styles.buttons}>
           <TouchableWithoutFeedback
-            disabled
+            onPress={() => this.redirectToLogin() }
           >
             <Text
               style={{
                 fontSize: 24,
-                color: "#ffffff"
+                color: "#6C6D77"
               }}
             >
               Log in
             </Text>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback
-            onPress={() => this.redirectToSignup() }
+            disabled
           >
             <Text
               style={{
                 fontSize: 24,
-                color: "#6C6D77"
+                color: "#ffffff"
               }}
             >
               Sign up
@@ -89,18 +99,24 @@ export default class LoginScreen extends Component {
         <View style={styles.form}>
           <TextInput
             style={styles.input}
+            onChangeText={text => this.onChangeName(text)}
+            value={this.state.name}
+          />
+          <TextInput
+            style={styles.input}
             onChangeText={text => this.onChangeUsername(text)}
             value={this.state.username}
+          />
+          <TextInput
+            style={styles.input}
+            onChangeText={text => this.onChangeEmail(text)}
+            value={this.state.email}
           />
           <TextInput
             style={styles.input}
             onChangeText={text => this.onChangePassword(text)}
             value={this.state.password}
           />
-
-          <TouchableHighlight onPress={() => this.resetPassword()}>
-            <Text style={{ color: "#6C6D77" }}>Forgot Password?</Text>
-          </TouchableHighlight>
 
           <TouchableHighlight
             style={styles.submitButton}
@@ -116,7 +132,7 @@ export default class LoginScreen extends Component {
 
         {/* Other sign in options */}
         <View style={styles.otherOptionsContainer}>
-          <Text style={{ textAlign: "center", color: "#6C6D77" }}>Or Sign in with</Text>
+          <Text style={{ textAlign: "center", color: "#6C6D77" }}>Or Sign up with</Text>
           <View style={styles.otherOptions}>
             <TouchableHighlight style={ styles.otherOptionsButton } onPress={() => this.loginWithFacebook()}>
               <FontAwesomeIcon
