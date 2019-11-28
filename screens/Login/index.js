@@ -46,7 +46,9 @@ export default class LoginScreen extends Component {
   }
 
   login() {
+    const {navigate} = this.props.navigation;
     Alert.alert("Button pressed")
+    navigate('App')
   }
 
   redirectToSignup() {

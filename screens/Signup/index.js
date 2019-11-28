@@ -55,8 +55,10 @@ export default class SignupScreen extends Component {
     Alert.alert('forgot password clicked!')
   }
 
-  login() {
+  signup() {
     Alert.alert("Button pressed")
+    const {navigate} = this.props.navigation;
+    navigate('App')
   }
 
   redirectToLogin() {
@@ -120,7 +122,7 @@ export default class SignupScreen extends Component {
 
           <TouchableHighlight
             style={styles.submitButton}
-            onPress={() => this.login()}
+            onPress={() => this.signup()}
           >
             <FontAwesomeIcon
               icon={faArrowRight}
@@ -150,6 +152,8 @@ export default class SignupScreen extends Component {
             </TouchableHighlight>
           </View>
         </View> */}
+        {/* TODO: link terms and conditions */}
+        <Text>By signing up, you agree to the Terms and Conditions.</Text>
       </View>
     );
   }
