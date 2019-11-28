@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
     },
     form: {
       backgroundColor: "#393A48",
-      margin: 20,
+      marginLeft: 20,
+      marginRight: 20,
       borderRadius: 25,
       paddingTop: 20,
       paddingBottom: 40,
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
       backgroundColor: "white",
       borderWidth: 1,
       borderRadius: 50,
-      margin: 20,
+      margin: 10,
       paddingLeft: 20,
       paddingRight: 20
     },

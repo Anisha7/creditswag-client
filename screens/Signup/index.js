@@ -131,7 +131,7 @@ export default class SignupScreen extends Component {
         </View>
 
         {/* Other sign in options */}
-        <View style={styles.otherOptionsContainer}>
+        {/* <View style={styles.otherOptionsContainer}>
           <Text style={{ textAlign: "center", color: "#6C6D77" }}>Or Sign up with</Text>
           <View style={styles.otherOptions}>
             <TouchableHighlight style={ styles.otherOptionsButton } onPress={() => this.loginWithFacebook()}>
@@ -149,7 +149,7 @@ export default class SignupScreen extends Component {
               />
             </TouchableHighlight>
           </View>
-        </View>
+        </View> */}
       </View>
     );
   }
