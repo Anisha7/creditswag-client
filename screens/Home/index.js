@@ -9,7 +9,7 @@ export default class HomeScreen extends Component {
   };
 
   logout() {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     navigate('Auth')
   }
 
