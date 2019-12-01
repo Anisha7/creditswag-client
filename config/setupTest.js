@@ -1,9 +1,8 @@
 import 'react-native';
 import 'jest-enzyme';
+import 'react-native-mock-render/mock';
 import Adapter from 'enzyme-adapter-react-16';
 import Enzyme from 'enzyme';
-// const Enzyme = require('enzyme');
-// const Adapter = require('enzyme-adapter-react-16');
 /**
  * Set up DOM in node.js environment for Enzyme to mount to
  */
