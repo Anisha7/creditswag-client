@@ -1,27 +1,25 @@
-import React from 'react';
-// import Adapter from 'enzyme-adapter-react-16';
-// import Enzyme from 'enzyme';
-// Enzyme.configure({ adapter: new Adapter() });
+import expect from 'expect'
+import React from 'react'
+import { mount } from 'enzyme'
 
-import { mount } from 'enzyme';
+
 import LoginScreen from '../';
 import {
     TextInput
   } from "react-native";
 
-describe('<LandingPage />', () => {
+
+describe('<LoginScreen />', () => {
     it('has no props', () => {
-        expect(true)
-    //   const wrapper = mount(
-    //       <LoginScreen />);
-    //   expect(wrapper.props()).toEqual({});
+      const Wrapper = mount(
+          <LoginScreen />);
+      expect(Wrapper.props()).toEqual({});
     });
   
     it('renders', () => {
-        expect(true)
-    //   const wrapper = mount(
-    //       <LandingPage />);
-    //   expect(wrapper.find(TextInput)).toHaveLength(2);
+      const Wrapper = mount(
+          <LoginScreen />);
+      expect(Wrapper.find(TextInput)).toHaveLength(2);
     });
-  
+    
   });

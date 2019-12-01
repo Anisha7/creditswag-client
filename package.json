@@ -5,7 +5,9 @@
     "verbose": true,
     "clearMocks": true,
     "collectCoverage": true,
-    "setupFilesAfterEnv": ["<rootDir>/config/setupTest.js"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/config/setupTest.js"
+    ],
     "transform": {
       "^.+\\.js$": "babel-jest"
     },
@@ -14,8 +16,10 @@
       "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
     },
     "transformIgnorePatterns": [
-      "node_modules/?!(react-router)", "node_modules/?!(@fortawesome)", "node_modules/?!(react-native)"
-  ]
+      "node_modules/?!(react-router)",
+      "node_modules/?!(@fortawesome)",
+      "node_modules/?!(react-native)"
+    ]
   },
   "scripts": {
     "start": "expo start",
@@ -26,13 +30,25 @@
     "test": "jest"
   },
   "dependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-native-fontawesome": "^0.1.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^8.0.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "expo": "^35.0.0",
+    "jest-enzyme": "^7.1.2",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
@@ -43,21 +59,12 @@
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.3",
     "react-navigation-tabs": "^2.6.0",
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-flow": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^9.0.0",
-    "babel-jest": "^23.4.2",
-    "babel-loader": "^8.0.2"
+    "tape": "^4.11.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^7.1.0",
-    "jest-expo": "^35.0.0"
+    "jest-expo": "^35.0.0",
+    "jsdom": "^15.2.1"
   },
   "private": true
 }
