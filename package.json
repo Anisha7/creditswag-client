@@ -64,8 +64,7 @@
   "devDependencies": {
     "babel-preset-expo": "^7.1.0",
     "jest-expo": "^35.0.0",
-    "jsdom": "^15.2.1",
-    "react-native-mock-render": "^0.1.7"
+    "jsdom": "^15.2.1"
   },
   "private": true
 }
