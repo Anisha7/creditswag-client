@@ -12,6 +12,8 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
+import validator from "email-validator";
+
 export default class SignupScreen extends Component {
   static navigationOptions = {
     header: null
@@ -24,6 +26,7 @@ export default class SignupScreen extends Component {
       password: "Password",
       email: "Email",
       name: "Name",
+      borderColor: "black",
     };
   }
 
@@ -36,6 +39,11 @@ export default class SignupScreen extends Component {
   }
 
   onChangeEmail(text) {
+    if (!validator.validate(text)) {
+      this.setState({ borderColor : 'red '})
+    } else {
+      this.setState({ borderColor : 'black'})
+    }
     this.setState({ email: text });
   }
 
@@ -126,6 +134,7 @@ export default class SignupScreen extends Component {
           <TouchableHighlight
             style={styles.submitButton}
             onPress={() => this.signup()}
+            disabled={this.state.borderColor === 'red'}
           >
             <FontAwesomeIcon
               icon={faArrowRight}

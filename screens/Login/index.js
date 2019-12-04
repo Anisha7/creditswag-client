@@ -12,6 +12,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
+
 export default class LoginScreen extends Component {
   static navigationOptions = {
     header: null

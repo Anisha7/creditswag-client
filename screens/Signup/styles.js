@@ -5,8 +5,8 @@ import {
 const styles = StyleSheet.create({
     container: {
       backgroundColor: "#2F303F",
-      paddingTop: 120,
-      paddingBottom: 120,
+      // paddingTop: 100,
+      // paddingBottom: 120,
       flex: 1,
       justifyContent: "center",
     },
@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     },
     terms: {
       margin: 30,
+      color: "#8F8F98",
     }
   });
   

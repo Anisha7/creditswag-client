@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
       paddingTop: 120,
       paddingBottom: 120,
       flex: 1,
-      justifyContent: "space-around"
+      justifyContent: "center"
     },
     navbuttons: {
       flexDirection: "row",
