@@ -70,14 +70,15 @@ export default class SignupScreen extends Component {
     return (
       <View style={styles.container}>
         {/* Select Log in or Sign up */}
-        <View style={styles.buttons}>
+        <View style={styles.navbuttons}>
           <TouchableWithoutFeedback
             onPress={() => this.redirectToLogin() }
           >
             <Text
               style={{
                 fontSize: 24,
-                color: "#6C6D77"
+                color: "#6C6D77",
+                margin: 10,
               }}
             >
               Log in
@@ -89,7 +90,9 @@ export default class SignupScreen extends Component {
             <Text
               style={{
                 fontSize: 24,
-                color: "#ffffff"
+                color: "#ffffff",
+
+                margin: 10,
               }}
             >
               Sign up
@@ -153,7 +156,7 @@ export default class SignupScreen extends Component {
           </View>
         </View> */}
         {/* TODO: link terms and conditions */}
-        <Text>By signing up, you agree to the Terms and Conditions.</Text>
+        <Text style={styles.terms}>By signing up, you agree to the Terms and Conditions.</Text>
       </View>
     );
   }

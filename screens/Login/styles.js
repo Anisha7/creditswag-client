@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
       justifyContent: "space-around"
     },
     navbuttons: {
-      // flex: 1,
       flexDirection: "row",
       justifyContent: "space-around",
       margin: 20
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
       backgroundColor: "#393A48",
       margin: 20,
       borderRadius: 25,
-      padding: 30,
+      padding: 20,
       alignItems: "center",
       height: 265,
     },

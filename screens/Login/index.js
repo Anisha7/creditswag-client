@@ -80,7 +80,8 @@ export default class LoginScreen extends Component {
             <Text
               style={{
                 fontSize: 24,
-                color: "#6C6D77"
+                color: "#6C6D77",
+                margin: 10,
               }}
             >
               Sign up
