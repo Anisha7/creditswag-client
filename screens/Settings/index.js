@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 const ProfileTab = ({ img, name }) => {
   return (
     <View style={styles.profileTab}>
-      <Image source={img} />
+      <Image source={{uri: img}} />
       <View>
         <Text>{name} </Text>
         <TouchableHighlight onPress={() => Alert.alert("view profile clicked")}>

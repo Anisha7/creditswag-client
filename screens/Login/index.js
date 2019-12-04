@@ -60,14 +60,15 @@ export default class LoginScreen extends Component {
     return (
       <View style={styles.container}>
         {/* Select Log in or Sign up */}
-        <View style={styles.buttons}>
+        <View style={styles.navbuttons}>
           <TouchableWithoutFeedback
             disabled
           >
             <Text
               style={{
                 fontSize: 24,
-                color: "#ffffff"
+                color: "#ffffff",
+                margin: 10,
               }}
             >
               Log in
