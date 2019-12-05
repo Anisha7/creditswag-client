@@ -1,61 +1,73 @@
-import {
-    StyleSheet
-  } from "react-native";
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container: {
-      backgroundColor: "#2F303F",
-      paddingTop: 120,
-      paddingBottom: 120,
-      paddingLeft: 20,
-      paddingRight: 20,
-      flex: 1, 
-      justifyContent: 'center'
-    },
-    // profileTab styles
-    profileTab: {
-        flex: 1,
-        flexDirection: 'row'
-    },
-    profileImage: {
-      flex: 1,
-      maxHeight: 80,
-      maxWidth: 80,
-      borderRadius: 15,
-    },
-    profileContent: {
-      marginLeft: 20,
-      marginRight: 10,
-      flex: 3
-    },
-    profileButton: {
-      flex: 1,
-      backgroundColor: "#979797",
-      maxHeight: 80,
-      maxWidth: 80,
-    },
-    profileName: {
-      color: 'white',
-      fontSize: 22,
-    },
-    profileEdit: {
-      color: 'white',
-      fontSize: 14,
-    },
-    // main styles
-    containerProfileTab: {
+  container: {
+    backgroundColor: "#2F303F",
+    paddingTop: 120,
+    paddingBottom: 120,
+    paddingLeft: 20,
+    paddingRight: 20,
+    flex: 1,
+    justifyContent: "center"
+  },
+  // profileTab styles
+  profileTab: {
+    flex: 1,
+    flexDirection: "row",
+    // justifyContent: "center",
+    alignItems: "center"
+  },
+  profileImage: {
+    flex: 1,
+    maxHeight: 80,
+    maxWidth: 80,
+    borderRadius: 15
+  },
+  profileContent: {
+    marginLeft: 20,
+    marginRight: 10,
+    flex: 3
+  },
+  profileButton: {
+    flex: 1,
+    backgroundColor: "#464652",
+    maxHeight: 80,
+    maxWidth: 80,
+    justifyContent: "center",
+    borderRadius: 15
+  },
+  profileName: {
+    color: "white",
+    fontSize: 22
+  },
+  profileEdit: {
+    color: "white",
+    fontSize: 14
+  },
+  // main styles
+  containerProfileTab: {},
+  containerStat: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 35,
+    backgroundColor: "#393948",
+    maxWidth: 140,
+    marginBottom: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+  containerSettingsTab: {
+    flex: 3,
+    backgroundColor: "#393948"
+  },
+  containerLogout: {},
+  statText: {
+    color: "#9C9CA3",
+    fontSize: 20,
+    paddingLeft: 10,
+    fontWeight: "600",
+  }
+});
 
-    },
-    containerStat: {
-
-    },
-    containerSettingsTab: {
-      flex: 3,
-      backgroundColor: "#393948"
-    },
-    containerLogout: {
-
-    }
-  });
-  
 export default styles;
