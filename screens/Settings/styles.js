@@ -31,10 +31,13 @@ const styles = StyleSheet.create({
   profileButton: {
     flex: 1,
     backgroundColor: "#464652",
-    maxHeight: 80,
-    maxWidth: 80,
+    // maxHeight: 80,
+    // maxWidth: 80,
+    alignItems: "center",
     justifyContent: "center",
-    borderRadius: 15
+    borderRadius: 15,
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   profileName: {
     color: "white",

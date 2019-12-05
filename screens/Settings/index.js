@@ -20,7 +20,7 @@ const ProfileTab = ({ img, name }) => {
       >
         <FontAwesomeIcon
           icon={faChevronRight}
-          size={32}
+          size={24}
           style={{ color: "white" }}
         />
       </TouchableHighlight>
@@ -44,7 +44,7 @@ export default class SettingsScreen extends Component {
         <ProfileTab
           style={styles.containerProfileTab}
           img={ "https://via.placeholder.com/80" }
-          name={"Timo"}
+          name={"Timofey Makhlay"}
         />
         <View style={styles.containerStat}>
           <Image source={require("../../assets/Streak.png")} />
