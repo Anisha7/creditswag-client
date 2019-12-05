@@ -54,7 +54,7 @@ const AccountSettingsTab = ({ title, link }) => {
 
 const NotificationSettingsTab = ({ title }) => {
   const [ switchStatus, setSwitchStatus ]  = useState(false);
-
+  // TODO: do something when status switches
   return (
     <View style={styles.settingsTabContainer}>
       <Text style={styles.settingsTitle}>{title}</Text>
@@ -62,9 +62,8 @@ const NotificationSettingsTab = ({ title }) => {
       isOn={switchStatus}
       onColor="#B060CA"
       offColor="#3D3D4C"
-      // label="Example label"
       labelStyle={{ color: "black", fontWeight: "900" }}
-      size="medium"
+      size="large"
       onToggle={isOn => setSwitchStatus(isOn)}
     />
     </View>
@@ -134,7 +133,6 @@ export default class SettingsScreen extends Component {
       <View style={styles.container}>
         <ScrollView>
           <ProfileTab
-            style={styles.containerProfileTab}
             img={"https://via.placeholder.com/80"}
             name={"Timofey Makhlay"}
           />
@@ -147,15 +145,6 @@ export default class SettingsScreen extends Component {
             {accountSettingTabsData.map(({ title, link }) => (
               <AccountSettingsTab key={title} title={title} link={link} />
             ))}
-
-            {/* <FlatList
-                data={accountSettingTabsData}
-                renderItem={({ item }) => (
-                  <AccountSettingsTab id={item.id} title={item.title} link={item.link} />
-                )}
-                keyExtractor={item => item.id}
-                // extraData={selected}
-          /> */}
 
             <Text style={styles.settingsHeading}>Notification</Text>
             {notificationSettingTabsData.map(({ title }) => (
