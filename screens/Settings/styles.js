@@ -64,7 +64,27 @@ const styles = StyleSheet.create({
     padding: 20,
     marginBottom: 20,
   },
-  containerLogout: {},
+  superContainerLogout: {
+    marginTop: 40,
+    alignItems: "center",
+  },
+  containerLogout: {
+    backgroundColor: "#5F5F6E",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 40,
+    paddingRight: 40,
+    maxWidth: "80%",
+    borderRadius: 50,
+  },
+  containerLogoutText: {
+    color: "#F2F2F2",
+    fontSize: 16,
+    marginLeft: 10,
+  },
   statText: {
     color: "#9C9CA3",
     fontSize: 20,

@@ -5,12 +5,12 @@ import {
   TouchableHighlight,
   Image,
   Alert,
-  ScrollView,
+  ScrollView
 } from "react-native";
 import styles from "./styles";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import ToggleSwitch from 'toggle-switch-react-native';
+import ToggleSwitch from "toggle-switch-react-native";
 
 const ProfileTab = ({ img, name }) => {
   return (
@@ -53,22 +53,22 @@ const AccountSettingsTab = ({ title, link }) => {
 };
 
 const NotificationSettingsTab = ({ title }) => {
-  const [ switchStatus, setSwitchStatus ]  = useState(false);
+  const [switchStatus, setSwitchStatus] = useState(false);
   // TODO: do something when status switches
   return (
     <View style={styles.settingsTabContainer}>
       <Text style={styles.settingsTitle}>{title}</Text>
       <ToggleSwitch
-      isOn={switchStatus}
-      onColor="#B060CA"
-      offColor="#3D3D4C"
-      labelStyle={{ color: "black", fontWeight: "900" }}
-      size="large"
-      onToggle={isOn => setSwitchStatus(isOn)}
-    />
+        isOn={switchStatus}
+        onColor="#B060CA"
+        offColor="#3D3D4C"
+        labelStyle={{ color: "black", fontWeight: "900" }}
+        size="large"
+        onToggle={isOn => setSwitchStatus(isOn)}
+      />
     </View>
-  )
-}
+  );
+};
 
 export default class SettingsScreen extends Component {
   static navigationOptions = {
@@ -127,8 +127,8 @@ export default class SettingsScreen extends Component {
       {
         title: "Spending notifications",
         id: "2-spendingNotif"
-      },
-    ]
+      }
+    ];
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -150,13 +150,17 @@ export default class SettingsScreen extends Component {
             {notificationSettingTabsData.map(({ title }) => (
               <NotificationSettingsTab key={title} title={title} />
             ))}
-
-            <TouchableHighlight
-              style={styles.containerLogout}
-              onPress={() => this.logout()}
-            >
-              <Text>LOG OUT</Text>
-            </TouchableHighlight>
+            <View style={styles.superContainerLogout}>
+              <TouchableHighlight
+                style={styles.containerLogout}
+                onPress={() => this.logout()}
+              >
+                <View>
+                  <Image source={require("../../assets/logoutIcon.png")} />
+                  <Text style={styles.containerLogoutText}>LOG OUT</Text>
+                </View>
+              </TouchableHighlight>
+            </View>
           </View>
         </ScrollView>
       </View>
