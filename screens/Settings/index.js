@@ -1,22 +1,22 @@
 import React, { Component } from "react";
-import { Text, View, TouchableHighlight, Image } from "react-native";
+import { Text, View, TouchableHighlight, Image, alert } from "react-native";
 import styles from "./styles";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 const ProfileTab = ({ img, name }) => {
   return (
     <View style={styles.profileTab}>
-      <Image source={{uri: img}} />
-      <View>
-        <Text>{name} </Text>
+      <Image style={styles.profileImage} source={{uri: img}} />
+      <View style={styles.profileContent}>
+        <Text style={styles.profileName}>{name} </Text>
         <TouchableHighlight onPress={() => Alert.alert("view profile clicked")}>
-          <Text>Edit Profile</Text>
+          <Text style={styles.profileEdit}>Edit Profile</Text>
         </TouchableHighlight>
       </View>
-      <TouchableHighlight onPress={() => Alert.alert("profile arrow clicked")}>
+      <TouchableHighlight style={styles.profileButton} onPress={() => Alert.alert("profile arrow clicked")}>
         <FontAwesomeIcon
-          icon={faArrowRight}
+          icon={faChevronRight}
           size={32}
           style={{ color: "white" }}
         />
@@ -38,11 +38,17 @@ export default class SettingsScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ProfileTab img={""} name={"Timo"} />
-        <Text>Settings</Text>
-        <TouchableHighlight onPress={() => this.logout()}>
-          <Text>LOG OUT</Text>
-        </TouchableHighlight>
+        <ProfileTab style={styles.containerProfileTab} img={"https://via.placeholder.com/100"} name={"Timo"} />
+        <View style={styles.containerStat}>
+          <Image style={styles.profileImage} source={{uri: "https://via.placeholder.com/60"}} />
+          <Text>188</Text>
+        </View>
+        <View style={styles.containerSettingsTab}>
+          <Text>TODO Tabs</Text>
+          <TouchableHighlight style={styles.containerLogout} onPress={() => this.logout()}>
+            <Text>LOG OUT</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }
