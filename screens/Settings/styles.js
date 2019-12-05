@@ -5,8 +5,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#2F303F",
     paddingTop: 120,
     paddingBottom: 120,
-    paddingLeft: 20,
-    paddingRight: 20,
+    // paddingLeft: 20,
+    // paddingRight: 20,
     flex: 1,
     justifyContent: "center"
   },
@@ -15,7 +15,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     // justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    marginLeft: 20,
+    marginRight: 20,
   },
   profileImage: {
     flex: 1,
@@ -48,7 +50,9 @@ const styles = StyleSheet.create({
     fontSize: 14
   },
   // main styles
-  containerProfileTab: {},
+  containerProfileTab: {
+    marginBottom: 30,
+  },
   containerStat: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -56,13 +60,15 @@ const styles = StyleSheet.create({
     borderRadius: 35,
     backgroundColor: "#393948",
     maxWidth: 140,
-    marginBottom: 20,
+    marginBottom: 30,
     paddingTop: 10,
     paddingBottom: 10,
+    marginLeft: 20,
   },
   containerSettingsTab: {
-    flex: 3,
-    backgroundColor: "#393948"
+    flex: 4,
+    backgroundColor: "#393948",
+    padding: 20,
   },
   containerLogout: {},
   statText: {
