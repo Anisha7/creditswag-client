@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginLeft: 20,
-    marginRight: 20,
+    marginRight: 20
   },
   profileImage: {
     flex: 1,
@@ -30,13 +30,11 @@ const styles = StyleSheet.create({
   profileButton: {
     flex: 1,
     backgroundColor: "#464652",
-    // maxHeight: 80,
-    // maxWidth: 80,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 15,
     paddingTop: 10,
-    paddingBottom: 10,
+    paddingBottom: 10
   },
   profileName: {
     color: "white",
@@ -48,31 +46,50 @@ const styles = StyleSheet.create({
   },
   // main styles
   containerProfileTab: {
-    marginBottom: 30,
+    marginBottom: 30
   },
   containerStat: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: 35,
     backgroundColor: "#393948",
     maxWidth: 140,
-    marginBottom: 30,
+    marginBottom: 10,
     paddingTop: 10,
     paddingBottom: 10,
-    marginLeft: 20,
+    marginLeft: 20
   },
   containerSettingsTab: {
     flex: 4,
-    backgroundColor: "#393948",
     padding: 20,
+    marginBottom: 20,
   },
   containerLogout: {},
   statText: {
     color: "#9C9CA3",
     fontSize: 20,
     paddingLeft: 10,
-    fontWeight: "600",
+    fontWeight: "600"
+  },
+  // settings tab
+  settingsHeading: {
+    color: "#6D6D78",
+    fontSize: 16,
+    marginBottom: 20,
+    marginTop: 20,
+  },
+  settingsTabContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingTop: 20,
+    paddingBottom: 20,
+    borderBottomColor: "#383846",
+    borderBottomWidth: 1,
+  },
+  settingsTitle: {
+    color: "#F2F2F2",
+    fontSize: 16,
   }
 });
 
