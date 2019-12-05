@@ -3,10 +3,8 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#2F303F",
-    paddingTop: 120,
-    paddingBottom: 120,
-    // paddingLeft: 20,
-    // paddingRight: 20,
+    paddingTop: 80,
+    paddingBottom: 80,
     flex: 1,
     justifyContent: "center"
   },
@@ -14,7 +12,6 @@ const styles = StyleSheet.create({
   profileTab: {
     flex: 1,
     flexDirection: "row",
-    // justifyContent: "center",
     alignItems: "center",
     marginLeft: 20,
     marginRight: 20,
