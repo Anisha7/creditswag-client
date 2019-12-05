@@ -70,15 +70,17 @@ const styles = StyleSheet.create({
   },
   containerLogout: {
     backgroundColor: "#5F5F6E",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
     paddingTop: 20,
     paddingBottom: 20,
     paddingLeft: 40,
     paddingRight: 40,
-    maxWidth: "80%",
+    maxWidth: "70%",
     borderRadius: 50,
+  },
+  innerLogoutContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   containerLogoutText: {
     color: "#F2F2F2",

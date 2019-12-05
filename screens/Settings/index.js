@@ -155,7 +155,7 @@ export default class SettingsScreen extends Component {
                 style={styles.containerLogout}
                 onPress={() => this.logout()}
               >
-                <View>
+                <View style={styles.innerLogoutContainer}>
                   <Image source={require("../../assets/logoutIcon.png")} />
                   <Text style={styles.containerLogoutText}>LOG OUT</Text>
                 </View>
