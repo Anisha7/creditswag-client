@@ -1,8 +1,10 @@
+import React from "react";
 import { createStackNavigator } from 'react-navigation-stack';
 import SettingsScreen from '../screens/Settings';
+import Icon from "react-native-vector-icons/FontAwesome";
 
 // Settings tabs
-export default createStackNavigator(
+const SettingsNavigation = createStackNavigator(
     {
       Settings: { screen: SettingsScreen },
       // Profile: { screen: ProfileScreen },
@@ -15,3 +17,15 @@ export default createStackNavigator(
       headerMode: 'none'
     }
   )
+
+export default {
+    screen: SettingsNavigation,
+    navigationOptions: {
+      tabBarIcon: ({ tintColor }) => {
+        return <Icon name="cogs" size={30} color={tintColor}/>;
+      }
+    },
+    tabBarOptions: {
+      showLabel: false
+    }
+  }
