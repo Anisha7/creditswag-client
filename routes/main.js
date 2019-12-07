@@ -52,7 +52,7 @@ const AppNavigation = createBottomTabNavigator(
     tabBarComponent: props => (
       <TabBarComponent
         {...props}
-        style={{ borderColor: "#252631", backgroundColor: "#31323F" }}
+        style={{ backgroundColor: "#31323F"}}
       />
     ),
     tabBarOptions: {
