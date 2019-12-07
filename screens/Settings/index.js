@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import PropTypes from 'prop-types';
 import {
   Text,
   View,
@@ -12,7 +13,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import ToggleSwitch from "toggle-switch-react-native";
 
-const ProfileTab = ({ img, name }) => {
+export const ProfileTab = ({ img, name }) => {
   return (
     <View style={styles.profileTab}>
       <Image style={styles.profileImage} source={{ uri: img }} />
@@ -36,7 +37,8 @@ const ProfileTab = ({ img, name }) => {
   );
 };
 
-const AccountSettingsTab = ({ title, link }) => {
+
+export const AccountSettingsTab = ({ title, link }) => {
   const redirect = () => Alert.alert(`TODO: go to ${link}`);
   return (
     <TouchableHighlight onPress={() => redirect()}>
@@ -52,7 +54,7 @@ const AccountSettingsTab = ({ title, link }) => {
   );
 };
 
-const NotificationSettingsTab = ({ title }) => {
+export const NotificationSettingsTab = ({ title }) => {
   const [switchStatus, setSwitchStatus] = useState(false);
   // TODO: do something when status switches
   return (

@@ -14,7 +14,7 @@ const SettingsNavigation = createStackNavigator(
     },
     {
       initialRouteName: 'Settings',
-      headerMode: 'none'
+      headerMode: 'screen'
     }
   )
 

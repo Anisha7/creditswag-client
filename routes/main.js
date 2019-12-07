@@ -17,7 +17,7 @@ const AuthNavigation = createStackNavigator(
   },
   {
     initialRouteName: "Login",
-    headerMode: "none"
+    headerMode: "screen",
   }
 );
 
@@ -30,7 +30,7 @@ const AppNavigation = createBottomTabNavigator(
   },
   {
     initialRouteName: "Settings",
-    headerMode: "none",
+    headerMode: "screen",
     tabBarComponent: props => (
       <TabBarComponent
         {...props}
@@ -43,6 +43,7 @@ const AppNavigation = createBottomTabNavigator(
       activeTintColor: '#A55FD0',
       inactiveTintColor: '#8F8E98'
     },
+    
   }
 );
 
@@ -53,8 +54,8 @@ const SwitchNavigator = createSwitchNavigator(
   },
   {
     initialRouteName: "Auth",
-    headerMode: "none"
-  }
+    headerMode: "screen",
+  },
 );
 
 export default createAppContainer(SwitchNavigator);

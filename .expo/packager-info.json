@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19004,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 23720,
-  "webpackServerPort": 19005,
-  "expoServerNgrokUrl": "https://2b-p33.anonymous.creditswag-client.exp.direct",
-  "packagerNgrokUrl": "https://packager.2b-p33.anonymous.creditswag-client.exp.direct",
-  "ngrokPid": 23759
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "webpackServerPort": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }

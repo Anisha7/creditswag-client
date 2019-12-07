@@ -10,7 +10,7 @@ const HomeNavigation = createStackNavigator(
     },
     {
       initialRouteName: 'Home',
-      headerMode: 'none'
+      // headerMode: 'screen',
     }
   )
 
