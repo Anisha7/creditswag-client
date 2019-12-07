@@ -2,11 +2,13 @@ import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
-import LoginScreen from './screens/Login';
-import SignupScreen from './screens/Signup';
-import HomeScreen from './screens/Home';
-import SettingsScreen from './screens/Settings';
+import LoginScreen from '../screens/Login';
+import SignupScreen from '../screens/Signup';
 
+import HomeNavigation from './home';
+import SettingsNavigation from './settings';
+
+// Authentication tabs
 const AuthNavigation = createStackNavigator(
     {
         Login: { screen: LoginScreen },
@@ -21,8 +23,8 @@ const AuthNavigation = createStackNavigator(
 // Tabs: Settings, Home, Wallet, Goals 
 const AppNavigation =   createBottomTabNavigator(
     {
-      Settings: { screen: SettingsScreen },
-      Home: { screen: HomeScreen }
+      Settings: { screen: SettingsNavigation },
+      Home: { screen: HomeNavigation }
     },
     {
       initialRouteName: 'Settings'
