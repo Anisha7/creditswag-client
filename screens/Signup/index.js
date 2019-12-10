@@ -66,11 +66,11 @@ export default class SignupScreen extends Component {
 
   signup() {
     const { navigate } = this.props.navigation;
-    navigate("App")
-    return
+    // navigate("App")
+    // return
     const { lastName, password, email, firstName } = this.state
     // implementation
-    fetch(`${BASE_URL}/user`, {
+    fetch(`${BASE_URL}/user/`, {
       method: "POST",
       headers: {'Accept': 'application/json', "Content-Type": "application/json"},
       body: JSON.stringify({ fname: firstName, lname: lastName, email, password })
