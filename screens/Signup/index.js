@@ -11,7 +11,7 @@ import styles from "./styles";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-
+import { BASE_URL } from "react-native-dotenv";
 import validator from "email-validator";
 
 export default class SignupScreen extends Component {
@@ -22,10 +22,10 @@ export default class SignupScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "Username",
-      password: "Password",
-      email: "Email",
-      name: "Name",
+      username: "",
+      password: "",
+      email: "",
+      name: "",
       errorMessage: "",
       borderColor: "black",
     };
@@ -127,22 +127,22 @@ export default class SignupScreen extends Component {
           <TextInput
             style={styles.input}
             onChangeText={text => this.onChangeName(text)}
-            value={this.state.name}
+            placeholder="Name"
           />
           <TextInput
             style={styles.input}
             onChangeText={text => this.onChangeUsername(text)}
-            value={this.state.username}
+            placeholder="Username"
           />
           <TextInput
             style={styles.input}
             onChangeText={text => this.onChangeEmail(text)}
-            value={this.state.email}
+            placeholder="Email"
           />
           <TextInput
             style={styles.input}
             onChangeText={text => this.onChangePassword(text)}
-            value={this.state.password}
+            placeholder="Password"
           />
 
           <TouchableHighlight
