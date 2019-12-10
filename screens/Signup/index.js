@@ -11,7 +11,7 @@ import styles from "./styles";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-
+import { BASE_URL } from "react-native-dotenv";
 import validator from "email-validator";
 
 export default class SignupScreen extends Component {
@@ -22,20 +22,21 @@ export default class SignupScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "Username",
-      password: "Password",
-      email: "Email",
-      name: "Name",
+      firstName: "",
+      lastName: "",
+      password: "",
+      email: "",
+      errorMessage: "",
       borderColor: "black",
     };
   }
 
-  onChangeUsername(text) {
-    this.setState({ username: text });
+  onChangeFirstName(text) {
+    this.setState({ firstName: text });
   }
 
-  onChangePassword(text) {
-    this.setState({ password: text });
+  onChangeLastName(text) {
+    this.setState({ lastName: text });
   }
 
   onChangeEmail(text) {
@@ -47,8 +48,8 @@ export default class SignupScreen extends Component {
     this.setState({ email: text });
   }
 
-  onChangeName(text) {
-    this.setState({ name: text });
+  onChangePassword(text) {
+    this.setState({ password: text });
   }
 
   loginWithFacebook() {
@@ -64,9 +65,28 @@ export default class SignupScreen extends Component {
   }
 
   signup() {
-    Alert.alert("Button pressed")
-    const {navigate} = this.props.navigation;
-    navigate('App')
+    const { navigate } = this.props.navigation;
+    navigate("App")
+    return
+    const { lastName, password, email, firstName } = this.state
+    // implementation
+    fetch(`${BASE_URL}/user`, {
+      method: "POST",
+      headers: {'Accept': 'application/json', "Content-Type": "application/json"},
+      body: JSON.stringify({ fname: firstName, lname: lastName, email, password })
+    })
+      .then(res => {
+        console.log(res)
+        if (res.ok === false) {
+          throw Error("Try again!")
+        }
+        res.json()
+      }).then((json) => {
+        console.log(json)
+        navigate("App")
+      }).catch(err => {
+        this.setState({ errorMessage: err.message })
+      });
   }
 
   redirectToLogin() {
@@ -112,23 +132,24 @@ export default class SignupScreen extends Component {
         <View style={styles.form}>
           <TextInput
             style={styles.input}
-            onChangeText={text => this.onChangeName(text)}
-            value={this.state.name}
+            onChangeText={text => this.onChangeFirstName(text)}
+            placeholder="First name"
           />
           <TextInput
             style={styles.input}
-            onChangeText={text => this.onChangeUsername(text)}
-            value={this.state.username}
+            onChangeText={text => this.onChangeLastName(text)}
+            placeholder="Last name"
           />
           <TextInput
             style={styles.input}
             onChangeText={text => this.onChangeEmail(text)}
-            value={this.state.email}
+            placeholder="Email"
           />
           <TextInput
             style={styles.input}
             onChangeText={text => this.onChangePassword(text)}
-            value={this.state.password}
+            placeholder="Password"
+            secureTextEntry={true}
           />
 
           <TouchableHighlight
@@ -142,6 +163,7 @@ export default class SignupScreen extends Component {
               style={{ color: "white" }}
             />
           </TouchableHighlight>
+          <Text style={{color: "red"}}>{this.state.errorMessage}</Text>
         </View>
 
         {/* Other sign in options */}
