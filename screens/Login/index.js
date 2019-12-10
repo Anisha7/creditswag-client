@@ -50,10 +50,11 @@ export default class LoginScreen extends Component {
   }
 
   login() {
+    const { navigate } = this.props.navigation;
     navigate("App")
     return
     const { username, password } = this.state
-    const { navigate } = this.props.navigation;
+    
     // implementation
     fetch(`${BASE_URL}/login`, {
       method: "POST",

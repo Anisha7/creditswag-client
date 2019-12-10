@@ -65,10 +65,10 @@ export default class SignupScreen extends Component {
   }
 
   signup() {
+    const { navigate } = this.props.navigation;
     navigate("App")
     return
     const { lastName, password, email, firstName } = this.state
-    const { navigate } = this.props.navigation;
     // implementation
     fetch(`${BASE_URL}/user`, {
       method: "POST",
