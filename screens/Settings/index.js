@@ -1,5 +1,4 @@
 import React, { Component, useState } from "react";
-import PropTypes from 'prop-types';
 import {
   Text,
   View,
@@ -36,7 +35,6 @@ export const ProfileTab = ({ img, name }) => {
     </View>
   );
 };
-
 
 export const AccountSettingsTab = ({ title, link }) => {
   const redirect = () => Alert.alert(`TODO: go to ${link}`);
