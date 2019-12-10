@@ -51,12 +51,9 @@ export default class LoginScreen extends Component {
 
   login() {
     const { navigate } = this.props.navigation;
-    navigate("App")
-    return
     const { username, password } = this.state
     
-    // implementation
-    fetch(`${BASE_URL}/login`, {
+    fetch(`${BASE_URL}/auth/login`, {
       method: "POST",
       headers: {
         "Accept": "application/json",
@@ -64,9 +61,13 @@ export default class LoginScreen extends Component {
       },
       body: JSON.stringify({ username, password })
     })
-      .then(res => res.json())
-      .then(() => navigate("App"))
-      .catch(err => {
+      .then(res => {
+        console.log(res)
+        return res.json()
+      }).then((json) => {
+        console.log(json)
+        return navigate("App")
+      }).catch(err => {
         this.setState({ errorMessage: err.message })
       });
   }
