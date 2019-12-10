@@ -26,6 +26,7 @@ export default class SignupScreen extends Component {
       password: "Password",
       email: "Email",
       name: "Name",
+      errorMessage: "",
       borderColor: "black",
     };
   }
@@ -64,9 +65,22 @@ export default class SignupScreen extends Component {
   }
 
   signup() {
-    Alert.alert("Button pressed")
-    const {navigate} = this.props.navigation;
-    navigate('App')
+    const { username, password, email, name } = this.state
+    const { navigate } = this.props.navigation;
+    // implementation
+    fetch(`${BASE_URL}/signup`, {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ username, password, email, name })
+    })
+      .then(res => res.json())
+      .then(() => navigate("App"))
+      .catch(err => {
+        this.setState({ errorMessage: err.message })
+      });
   }
 
   redirectToLogin() {
@@ -142,6 +156,7 @@ export default class SignupScreen extends Component {
               style={{ color: "white" }}
             />
           </TouchableHighlight>
+          <Text style={{color: "red"}}>{this.state.errorMessage}</Text>
         </View>
 
         {/* Other sign in options */}
