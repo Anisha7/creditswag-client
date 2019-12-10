@@ -107,12 +107,12 @@ export default class LoginScreen extends Component {
           <TextInput
             style={styles.input}
             onChangeText={text => this.onChangeUsername(text)}
-            placeholder={"username"}
+            placeholder="username or email"
           />
           <TextInput
             style={styles.input}
             onChangeText={text => this.onChangePassword(text)}
-            placeholder={"password"}
+            placeholder="password"
           />
 
           <TouchableHighlight onPress={() => this.resetPassword()}>
