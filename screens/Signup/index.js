@@ -65,6 +65,8 @@ export default class SignupScreen extends Component {
   }
 
   signup() {
+    navigate("App")
+    return
     const { lastName, password, email, firstName } = this.state
     const { navigate } = this.props.navigation;
     // implementation

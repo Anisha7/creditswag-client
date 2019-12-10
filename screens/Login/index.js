@@ -50,6 +50,8 @@ export default class LoginScreen extends Component {
   }
 
   login() {
+    navigate("App")
+    return
     const { username, password } = this.state
     const { navigate } = this.props.navigation;
     // implementation
