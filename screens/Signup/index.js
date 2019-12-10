@@ -22,21 +22,21 @@ export default class SignupScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      firstName: "",
+      lastName: "",
       password: "",
       email: "",
-      name: "",
       errorMessage: "",
       borderColor: "black",
     };
   }
 
-  onChangeUsername(text) {
-    this.setState({ username: text });
+  onChangeFirstName(text) {
+    this.setState({ firstName: text });
   }
 
-  onChangePassword(text) {
-    this.setState({ password: text });
+  onChangeLastName(text) {
+    this.setState({ lastName: text });
   }
 
   onChangeEmail(text) {
@@ -48,8 +48,8 @@ export default class SignupScreen extends Component {
     this.setState({ email: text });
   }
 
-  onChangeName(text) {
-    this.setState({ name: text });
+  onChangePassword(text) {
+    this.setState({ password: text });
   }
 
   loginWithFacebook() {
@@ -65,20 +65,24 @@ export default class SignupScreen extends Component {
   }
 
   signup() {
-    const { username, password, email, name } = this.state
+    const { lastName, password, email, firstName } = this.state
     const { navigate } = this.props.navigation;
     // implementation
-    fetch(`${BASE_URL}/signup`, {
+    fetch(`${BASE_URL}/user`, {
       method: "POST",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ username, password, email, name })
+      headers: {'Accept': 'application/json', "Content-Type": "application/json"},
+      body: JSON.stringify({ fname: firstName, lname: lastName, email, password })
     })
-      .then(res => res.json())
-      .then(() => navigate("App"))
-      .catch(err => {
+      .then(res => {
+        console.log(res)
+        if (res.ok === false) {
+          throw Error("Try again!")
+        }
+        res.json()
+      }).then((json) => {
+        console.log(json)
+        navigate("App")
+      }).catch(err => {
         this.setState({ errorMessage: err.message })
       });
   }
@@ -126,13 +130,13 @@ export default class SignupScreen extends Component {
         <View style={styles.form}>
           <TextInput
             style={styles.input}
-            onChangeText={text => this.onChangeName(text)}
-            placeholder="Name"
+            onChangeText={text => this.onChangeFirstName(text)}
+            placeholder="First name"
           />
           <TextInput
             style={styles.input}
-            onChangeText={text => this.onChangeUsername(text)}
-            placeholder="Username"
+            onChangeText={text => this.onChangeLastName(text)}
+            placeholder="Last name"
           />
           <TextInput
             style={styles.input}
@@ -143,6 +147,7 @@ export default class SignupScreen extends Component {
             style={styles.input}
             onChangeText={text => this.onChangePassword(text)}
             placeholder="Password"
+            secureTextEntry={true}
           />
 
           <TouchableHighlight
