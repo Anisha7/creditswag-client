@@ -5,7 +5,9 @@ import {
   TouchableWithoutFeedback,
   Alert,
   TextInput,
-  TouchableHighlight
+  TouchableHighlight,
+  KeyboardAvoidingView,
+  Platform
 } from "react-native";
 import styles from "./styles";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -79,6 +81,10 @@ export default class LoginScreen extends Component {
 
   render() {
     return (
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : null}
+        style={{ flex: 1 }}
+      >
       <View style={styles.container}>
         {/* Select Log in or Sign up */}
         <View style={styles.navbuttons}>
@@ -166,6 +172,7 @@ export default class LoginScreen extends Component {
           </View>
         </View>
       </View>
+      </KeyboardAvoidingView>
     );
   }
 }
