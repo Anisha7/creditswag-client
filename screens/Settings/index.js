@@ -11,6 +11,7 @@ import styles from "./styles";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import ToggleSwitch from "toggle-switch-react-native";
+import { _removeData } from '../../store';
 
 export const ProfileTab = ({ img, name }) => {
   return (
@@ -76,6 +77,8 @@ export default class SettingsScreen extends Component {
   };
 
   logout() {
+    // TODO: send request to backend logout route
+    _removeData("AuthToken") // TODO: test that this works
     const { navigate } = this.props.navigation;
     navigate("Auth");
   }

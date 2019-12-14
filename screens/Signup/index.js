@@ -16,6 +16,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { BASE_URL } from "react-native-dotenv";
 import validator from "email-validator";
 
+import { _storeData } from '../../store';
+
 export default class SignupScreen extends Component {
   static navigationOptions = {
     header: null
@@ -84,15 +86,20 @@ export default class SignupScreen extends Component {
       })
     })
       .then(res => {
+        console.log("response: ")
         console.log(res);
         if (res.ok === false) {
           throw Error("Try again!");
         }
-        res.json();
+        return res.json();
       })
-      .then(json => {
-        console.log(json);
-        navigate("App");
+      .then(data => {
+        console.log("data: ")
+        console.log(data);
+        console.log("HERE")
+        _storeData("AuthToken", data.Authorization) // TODO: test that this works
+        console.log("HERE2")
+        return navigate("App");
       })
       .catch(err => {
         this.setState({ errorMessage: err.message });

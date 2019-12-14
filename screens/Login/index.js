@@ -14,6 +14,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { BASE_URL } from "react-native-dotenv";
+import { _storeData } from '../../store';
 
 // TODO: social auth with https://www.npmjs.com/package/react-native-simple-auth
 
@@ -66,8 +67,12 @@ export default class LoginScreen extends Component {
       .then(res => {
         console.log(res)
         return res.json()
-      }).then((json) => {
-        console.log(json)
+      }).then((data) => {
+        console.log("data: ")
+        console.log(data);
+        console.log("HERE")
+        _storeData("AuthToken", data.Authorization) // TODO: test that this works
+        console.log("HERE2")
         return navigate("App")
       }).catch(err => {
         this.setState({ errorMessage: err.message })
