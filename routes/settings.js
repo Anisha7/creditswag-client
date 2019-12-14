@@ -1,13 +1,14 @@
 import React from "react";
 import { createStackNavigator } from 'react-navigation-stack';
 import SettingsScreen from '../screens/Settings';
+import ProfileScreen from '../screens/Settings/screens/Profile';
 import Icon from "react-native-vector-icons/FontAwesome";
 
 // Settings tabs
 const SettingsNavigation = createStackNavigator(
     {
       Settings: { screen: SettingsScreen },
-      // Profile: { screen: ProfileScreen },
+      Profile: { screen: ProfileScreen },
       // ChangeEmail: { screen: ChangeEmailScreen },
       // PaymentSearch: { screen: PaymentSearchScreen },
       // RecurringBill: { screen: RecurringBillScreen }

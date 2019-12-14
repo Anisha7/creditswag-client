@@ -12,19 +12,19 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import ToggleSwitch from "toggle-switch-react-native";
 
-export const ProfileTab = ({ img, name }) => {
+export const ProfileTab = ({ img, name, navigate }) => {
   return (
     <View style={styles.profileTab}>
       <Image style={styles.profileImage} source={{ uri: img }} />
       <View style={styles.profileContent}>
         <Text style={styles.profileName}>{name} </Text>
-        <TouchableHighlight onPress={() => Alert.alert("view profile clicked")}>
+        <TouchableHighlight onPress={() => navigate("Profile")}>
           <Text style={styles.profileEdit}>Edit Profile</Text>
         </TouchableHighlight>
       </View>
       <TouchableHighlight
         style={styles.profileButton}
-        onPress={() => Alert.alert("profile arrow clicked")}
+        onPress={() => navigate('Profile')}
       >
         <FontAwesomeIcon
           icon={faChevronRight}
@@ -75,12 +75,12 @@ export default class SettingsScreen extends Component {
     header: null
   };
 
-  logout() {
-    const { navigate } = this.props.navigation;
+  logout(navigate) {
     navigate("Auth");
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     const accountSettingTabsData = [
       {
         title: "Change email",
@@ -135,6 +135,7 @@ export default class SettingsScreen extends Component {
           <ProfileTab
             img={"https://via.placeholder.com/80"}
             name={"Timofey Makhlay"}
+            navigate={navigate}
           />
           <View style={styles.containerStat}>
             <Image source={require("../../assets/Streak.png")} />
@@ -153,7 +154,7 @@ export default class SettingsScreen extends Component {
             <View style={styles.superContainerLogout}>
               <TouchableHighlight
                 style={styles.containerLogout}
-                onPress={() => this.logout()}
+                onPress={() => this.logout(navigate)}
               >
                 <View style={styles.innerLogoutContainer}>
                   <Image source={require("../../assets/logoutIcon.png")} />
